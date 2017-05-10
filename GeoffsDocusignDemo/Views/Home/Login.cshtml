@@ -1,0 +1,36 @@
+﻿@model GeoffsDocuSignDemo.Models.LoginRequestModel
+
+@{
+    ViewData["Title"] = "Sign On";
+}
+
+
+
+<body>
+
+    <div>
+        <h3>@ViewData["Message"]</h3>
+        <br><br>
+        <p><font size="6">Sign On</font></p>
+    </div>
+
+    @using (Html.BeginForm("LoginFormSubmit", "Home", FormMethod.Post))
+    {
+        <div>
+            @*<p><font size="6">E.</font></p>*@
+
+            <p> Username:<br></p>
+            @Html.TextBoxFor(m => m.Username)
+            <br><br>
+            <p> Password:<br></p>
+            @*<p>Select Files: <input type = "file" name = "img" multiple></p>
+                <p><input type="file" id="FileName" name="upload" /></P>
+            *@
+            @Html.PasswordFor(m => m.Password)
+            <input type="submit">
+        </div>
+    }
+
+    <br><br>
+
+</body>

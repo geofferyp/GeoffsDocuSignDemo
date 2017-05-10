@@ -1,0 +1,49 @@
+﻿ @model GeoffsDocuSignDemo.Models.SendRequestModel
+
+@{
+    ViewData["Title"] = "Send Documents"; 
+
+    
+}
+
+<body>
+
+    <div>
+        <p><font size="6">Send Selected Documents</font></p>
+    </div>
+    <div>
+        <h3>@ViewData["Message"]</h3>
+    </div>
+
+    <br>
+ 
+    @using (Html.BeginForm("SendFormSubmit", "Home",FormMethod.Post)) 
+    {
+        <div>
+            <p> Enter email address of recipient:<br ></p>            
+                   
+            @Html.TextBoxFor(m => m.RecipientEmailAddress)
+
+                       <br><br>
+
+            <p> Enter name of recipient:<br></p>
+
+            @Html.TextBoxFor(m => m.RecipientName)
+            <br><br>
+            <input type="submit">
+        </div>
+    }
+
+    <br><br>
+    @*<p><strong>Note:</strong> The multiple attribute of the input tag is not supported in Internet Explorer 9 and earlier versions.</p>*@
+
+</body>
+
+
+
+
+
+
+
+
+
